@@ -1,12 +1,18 @@
 import NextAuth from "next-auth"
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
-import clientPromise from '../../../lib/mongodb'
+import clientPromise from "../../../lib/mongodb"
 import EmailProvider from "next-auth/providers/email"
 import GithubProvider from "next-auth/providers/github"
 import GitlabProvider from "next-auth/providers/gitlab"
+// import { signIn } from "next-auth/react";
 
 export default NextAuth({
+  // DB Adapter
   adapter: MongoDBAdapter(clientPromise),
+  // Custom signIn page
+  // pages: {
+  //   signIn: '/signin'
+  // },
   // Configure one or more authentication providers
   providers: [
     EmailProvider({

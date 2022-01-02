@@ -1,0 +1,150 @@
+import { useState, useEffect } from 'react';
+import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link';
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSun, faMoon, faBell, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles/Navbar.module.css';
+
+library.add(faSun, faMoon, faBell, faLock, faUnlock);
+
+const Navbar = () => {
+  const {data: session} = useSession()
+	const [theme, setTheme] = useState('');
+
+	useEffect(() => {
+		const localTheme = localStorage.getItem('theme');
+		setTheme(localTheme);
+
+		if (localTheme === null || localTheme === '') {
+			localStorage.setItem('theme', 'light');
+			setTheme('light');
+		} else if (localTheme === 'dark') {
+			document.body.classList.add('dark');
+		}
+	});
+
+	const toggleTheme = e => {
+		if (theme === 'light') {
+			localStorage.setItem('theme', 'dark');
+			document.body.classList.add('dark');
+			setTheme('dark');
+		} else {
+			localStorage.setItem('theme', 'light');
+			document.body.classList.remove('dark');
+			setTheme('light');
+		}
+	};
+
+	return (
+		<nav className={styles.nav}>
+			<div className={styles.navContent}>
+				<div className='logo'>
+					{theme === 'light' ? (
+						<Link href='/'>
+							<a>
+								<Image
+									src='/images/my-logo.png'
+									alt='logo'
+									width={224}
+									height={60}
+								/>
+							</a>
+						</Link>
+					) : (
+						<Link href='/'>
+							<a>
+								<Image
+									src='/images/my-logo-dark.png'
+									alt='logo'
+									width={224}
+									height={60}
+								/>
+							</a>
+						</Link>
+					)}
+				</div>
+				<div className={styles.topNavLinks}>
+					<Link href='/projects'>
+						<a>Projects</a>
+					</Link>
+					<Link href='/news'>
+						<a>News</a>
+					</Link>
+					<Link href='/contact'>
+						<a>Contact</a>
+					</Link>
+          {session ? (
+            <Link href='/account'>
+						<a>Account <img src={session.user.image} alt={session.user.name} className={styles.avatar} /></a>
+					</Link>
+          ) : ('')}
+					<button
+						name='toggle theme'
+						title='Toggle Theme'
+						aria-label='Toggle Theme'
+						className={styles.faIcon}
+						onClick={toggleTheme}
+					>
+						{theme === 'light' ? (
+							<FontAwesomeIcon icon={faSun} />
+						) : (
+							<FontAwesomeIcon icon={faMoon} />
+						)}
+					</button>
+          {!session ? (
+            <button
+						name='toggle session'
+						title='Session SignIn'
+						aria-label='Session SignIn'
+						className={styles.faIcon}
+						onClick={() => signIn()}
+					>
+						{theme === 'light' ? (
+							<FontAwesomeIcon icon={faLock} />
+						) : (
+							<FontAwesomeIcon icon={faLock} />
+						)}
+					</button>
+          ) : (
+            <button
+						name='toggle session'
+						title='Session SignIn'
+						aria-label='Session SignIn'
+						className={styles.faIcon}
+						onClick={() => signOut()}
+					>
+						{theme === 'light' ? (
+							<FontAwesomeIcon icon={faUnlock} />
+						) : (
+							<FontAwesomeIcon icon={faUnlock} />
+						)}
+					</button>
+          )}         
+				</div>
+			</div>
+		</nav>
+	);
+};
+
+export async function getServerSideProps(context) {
+  try {
+    // client.db() will be the default database passed in the MONGODB_URI
+    // You can change the database by calling the client.db() function and specifying a database like:
+    // const db = client.db("myDatabase");
+    // Then you can execute queries against your database like so:
+    // db.find({}) or any of the MongoDB Node Driver commands
+    await clientPromise
+    return {
+      props: { isConnected: true },
+    }
+  } catch (e) {
+    console.error(e)
+    return {
+      props: { isConnected: false },
+    }
+  }
+}
+
+export default Navbar;

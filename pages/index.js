@@ -3,17 +3,14 @@ import clientPromise from '../lib/mongodb';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ isConnected }) {
+  console.log(`DB is connected: ${isConnected}`);
   const {data: session} = useSession()
   if (session) {
     const {user} = session;
     return (
       <div  className={styles.container}>
-      {!session.user.name ? (
-        <p>Signed in as {user.email}</p>
-      ) : (
         <p>Signed in as {user.name} <img src={user.image} alt={user.name} className={styles.avatar}/></p>
-      )}
         <p>Click <Link href="/account"><a>here</a></Link> to go to your account.</p><br />
         <button onClick={() => signOut()}>Sign out</button>
       </div>
@@ -22,13 +19,13 @@ export default function Home() {
   return (
     <>
       <div  className={styles.container}>
-        <p>Not signed in </p>
-        {session ? (
+        <p>Not signed in, </p>
+        {isConnected ? (
           <p>but connected to the DB</p>
         ) : (
-          <p>and <em>not</em> connected to the DB</p>
+          <p>, but <em>not</em> connected to the DB</p>
         )}
-        <button onClick={() => signIn()}>Sign in</button>
+        <button onClick={() => signIn('github')}>Sign in</button>
       </div>
     </>
   )

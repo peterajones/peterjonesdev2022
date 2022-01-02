@@ -5,7 +5,7 @@ export default function Account({ session }) {
 
   return (
   <>
-    <div>You can only see this page if you are logged in!</div><br />
+    <div><p>You can only see this page if you are logged in!</p></div><br />
     <button onClick={() => signOut()}>Sign out</button>
   </>
   )
