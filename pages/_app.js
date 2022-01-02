@@ -1,23 +1,8 @@
-// import { SessionProvider } from "next-auth/react"
-// import '../styles/globals.css'
-
-// function App({ 
-//   Component,
-//   pageProps: {session, ...pageProps}
-// }) {
-//   return (
-//     <SessionProvider session={session}>
-//       <Component {...pageProps} />
-//     </SessionProvider>
-//   )
-// }
-
-// export default App
-import Router from 'next/router';
-import NProgress from 'nprogress';
-import { SessionProvider } from 'next-auth/react';
-import Layout from '../components/Layout';
-import '../styles/globals.scss';
+import Router from 'next/router'
+import NProgress from 'nprogress'
+import { SessionProvider } from 'next-auth/react'
+import Layout from "../Components/Layout"
+import '../styles/globals.scss'
 
 NProgress.configure({
 	easing: 'ease-in-out',
