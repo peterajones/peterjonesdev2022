@@ -25,7 +25,7 @@ export default function Home({ isConnected }) {
         ) : (
           <p>, but <em>not</em> connected to the DB</p>
         )}
-        <button onClick={() => signIn('github')}>Sign in</button>
+        <button onClick={() => signIn()}>Sign in</button>
       </div>
     </>
   )

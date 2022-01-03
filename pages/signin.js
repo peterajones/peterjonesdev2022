@@ -1,5 +1,5 @@
 import React from "react";
-import { providers, signIn, getSession, csrfToken } from "next-auth/react";
+import { getProviders, signIn, getSession, getCsrfToken } from "next-auth/react";
 import {
   Box,
   Button,
@@ -9,57 +9,57 @@ import {
   Container,
   Stack,
 } from "@chakra-ui/react";
+
 export default function SignIn({ providers, csrfToken }) {
+  console.log(providers, csrfToken);
   return (
-    <Container maxW="xl" centerContent>
-      <Heading as="h1" textAlign="center">
-        Welcome to our custom page
-      </Heading>
-      <Box alignContent="center" justifyContent="center" marginTop={12}>
-        <Box className="email-form">
+    <div className="sign-in-wrapper">
+        <h1>Welcome to our custom page</h1>
+      <div className="sign-in-container">
+        <div className="email-form">
           <form method="post" action="/api/auth/signin/email">
-            <Input name="csrfToken" type="hidden" defaultValue={csrfToken} />
+            <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
             <label>
-              Email address
-              <Input type="text" id="email" name="email" />
+              <p>Email address</p>
+              <input type="text" id="email" name="email" />
             </label>
-            <Button type="submit">Use your Email</Button>
+            <button type="submit">Use your Email</button>
           </form>
-        </Box>
-        <Stack isInline marginTop={12}>
+        </div>
+        <div className="signin-providers-section">
           {Object.values(providers).map((provider) => {
             if (provider.name === "Email") {
               return;
             }
             return (
-              <Box key={provider.name}>
-                <Button variant="outline" onClick={() => signIn(provider.id)}>
-                  Sign in with {provider.name}
-                </Button>
-              </Box>
+              <div className="signin-providers" key={provider.name}>
+                <button onClick={() => signIn(provider.id)}>Sign in with {provider.name}</button>
+              </div>
             );
           })}
-        </Stack>
-      </Box>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 }
 
-SignIn.getInitialProps = async (context) => {
-  const { req, res } = context;
-  const session = await getSession({ req });
-
-  if (session && res && session.accessToken) {
-    res.writeHead(302, {
-      Location: "/",
-    });
-    res.end();
-    return;
+export async function getServerSideProps(context) {
+  const session = await getSession({ req: context.req });
+  if (session?.user) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
   }
 
+  const providers = await getProviders();
   return {
-    session: undefined,
-    providers: await providers(context),
-    csrfToken: await csrfToken(context),
-  };
-};
+    props: { providers },
+  }
+  const csrfToken = await getCsrfToken(context)
+  return {
+    props: { csrfToken },
+  }
+}

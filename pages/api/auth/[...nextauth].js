@@ -10,9 +10,9 @@ export default NextAuth({
   // DB Adapter
   adapter: MongoDBAdapter(clientPromise),
   // Custom signIn page
-  // pages: {
-  //   signIn: '/signin'
-  // },
+  pages: {
+    signIn: '/signin'
+  },
   // Configure one or more authentication providers
   providers: [
     EmailProvider({
