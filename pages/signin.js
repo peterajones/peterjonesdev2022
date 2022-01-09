@@ -1,14 +1,5 @@
 import React from "react";
-import { getProviders, signIn, getSession, getCsrfToken } from "next-auth/react";
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Input,
-  Container,
-  Stack,
-} from "@chakra-ui/react";
+import { getProviders, signIn, getSession, getCsrfToken} from "next-auth/react";
 
 export default function SignIn({ providers, csrfToken }) {
   console.log(providers, csrfToken);
@@ -28,6 +19,7 @@ export default function SignIn({ providers, csrfToken }) {
         </div>
         <div className="signin-providers-section">
           {Object.values(providers).map((provider) => {
+            console.log(provider, 'shit')
             if (provider.name === "Email") {
               return;
             }
@@ -44,7 +36,8 @@ export default function SignIn({ providers, csrfToken }) {
 }
 
 export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
+  const { req, res } = context
+  const session = await getSession({ req });
   if (session?.user) {
     return {
       redirect: {
@@ -54,12 +47,11 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const providers = await getProviders();
+  const providers = await getProviders(context);
+  // console.log(providers);
+  const csrfToken = await getCsrfToken(context);
+  // console.log(csrfToken);
   return {
-    props: { providers },
-  }
-  const csrfToken = await getCsrfToken(context)
-  return {
-    props: { csrfToken },
+    props: { providers, csrfToken },
   }
 }
