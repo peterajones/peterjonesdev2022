@@ -19,13 +19,7 @@ export default function Home({ isConnected }) {
   return (
     <>
       <div  className={styles.container}>
-        <p>Not signed in, </p>
-        {isConnected ? (
-          <p>but connected to the DB</p>
-        ) : (
-          <p>, but <em>not</em> connected to the DB</p>
-        )}
-        <button onClick={() => signIn()}>Sign in</button>
+        <h1>Homepage</h1>
       </div>
     </>
   )

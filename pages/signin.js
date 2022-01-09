@@ -5,7 +5,7 @@ export default function SignIn({ providers, csrfToken }) {
   console.log(providers, csrfToken);
   return (
     <div className="sign-in-wrapper">
-        <h1>Welcome to our custom page</h1>
+        <h1>Login to get rich!</h1>
       <div className="sign-in-container">
         <div className="email-form">
           <form method="post" action="/api/auth/signin/email">
