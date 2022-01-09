@@ -19,7 +19,7 @@ export default function SignIn({ providers, csrfToken }) {
         </div>
         <div className="signin-providers-section">
           {Object.values(providers).map((provider) => {
-            console.log(provider, 'shit')
+            console.log(provider)
             if (provider.name === "Email") {
               return;
             }
@@ -48,9 +48,9 @@ export async function getServerSideProps(context) {
   }
 
   const providers = await getProviders(context);
-  // console.log(providers);
+  console.log(providers);
   const csrfToken = await getCsrfToken(context);
-  // console.log(csrfToken);
+  console.log(csrfToken);
   return {
     props: { providers, csrfToken },
   }

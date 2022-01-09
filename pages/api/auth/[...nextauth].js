@@ -4,6 +4,7 @@ import clientPromise from "../../../lib/mongodb"
 import EmailProvider from "next-auth/providers/email"
 import GithubProvider from "next-auth/providers/github"
 import GitlabProvider from "next-auth/providers/gitlab"
+import GoogleProvider from "next-auth/providers/google"
 // import { signIn } from "next-auth/react";
 
 export default NextAuth({
@@ -27,6 +28,10 @@ export default NextAuth({
       clientId: process.env.GITLAB_CLIENT_ID,
       clientSecret: process.env.GITLAB_CLIENT_SECRET,
     }),
+    GoogleProvider({
+    clientId: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET
+  }),
     // ...add more providers here
   ],
 })

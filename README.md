@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2. [NextAuth.js Documentation](https://next-auth.js.org/)
 3. [Secure your local development server with HTTPS](https://anmagpie.medium.com/secure-your-local-development-server-with-https-next-js-81ac6b8b3d68)
 4. [next-auth-example](https://github.com/nextauthjs/next-auth-example/blob/main/pages/api/auth/%5B...nextauth%5D.js)
+5. [Local development server with HTTPS](https://anmagpie.medium.com/secure-your-local-development-server-with-https-next-js-81ac6b8b3d68)
