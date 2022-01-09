@@ -1,16 +1,16 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Image from 'next/image';
 import clientPromise from '../lib/mongodb';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
 export default function Home({ isConnected }) {
-  console.log(`DB is connected: ${isConnected}`);
   const {data: session} = useSession()
   if (session) {
     const {user} = session;
     return (
       <div  className={styles.container}>
-        <p>Signed in as {user.name} <img src={user.image} alt={user.name} className={styles.avatar}/></p>
+        <p>Signed in as {user.name} <Image src={user.image} alt={user.name} className={styles.avatar}/></p>
         <p>Click <Link href="/account"><a>here</a></Link> to go to your account.</p><br />
         <button onClick={() => signOut()}>Sign out</button>
       </div>

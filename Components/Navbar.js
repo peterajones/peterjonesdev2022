@@ -77,7 +77,7 @@ const Navbar = () => {
 					</Link>
           {session ? (
             <Link href='/account'>
-						<a>Account <img src={session.user.image} alt={session.user.name} className={styles.avatar} /></a>
+						<a>Account <Image src={session.user.image} alt={session.user.name} className={styles.avatar} /></a>
 					</Link>
           ) : ('')}
 					<button
