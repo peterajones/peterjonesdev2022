@@ -12,7 +12,7 @@ export default function SignIn({ providers, csrfToken }) {
               <p className="email-label">Email address</p>
               <input type="text" id="email" name="email" placeholder="Email address" />
             </label>
-            <button type="submit" class="button">Use your Email</button>
+            <button type="submit" className="button">Use your Email</button>
           </form>
         </div>
         <div className="divider"></div>
