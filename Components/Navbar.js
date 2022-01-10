@@ -77,7 +77,9 @@ const Navbar = () => {
 					</Link>
           {session ? (
             <Link href='/account'>
-						<a>Account <Image src={session.user.image} alt={session.user.name} className={styles.avatar} /></a>
+						<a>Account 
+							{/* <Image src={session.user.image} alt={session.user.name} className={styles.avatar} /> */}
+						</a>
 					</Link>
           ) : ('')}
 					<button
@@ -110,8 +112,8 @@ const Navbar = () => {
           ) : (
             <button
 						name='toggle session'
-						title='Session SignIn'
-						aria-label='Session SignIn'
+						title='Session SignOut'
+						aria-label='Session SignOut'
 						className={styles.faIcon}
 						onClick={() => signOut()}
 					>

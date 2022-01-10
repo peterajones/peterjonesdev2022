@@ -6,7 +6,7 @@ export default function Account({ session }) {
   return (
   <>
     <div><p>You can only see this page if you are logged in!</p></div><br />
-    <button onClick={() => signOut()}>Sign out</button>
+    <button onClick={() => signOut()} className='button'>Sign out</button>
   </>
   )
 }
