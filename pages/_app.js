@@ -16,14 +16,15 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-function App({ Component, pageProps }) {
-	return (
-		<SessionProvider session={pageProps.session}>
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  return (
+		<SessionProvider session={session}>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
 		</SessionProvider>
 	);
 }
-
-export default App;

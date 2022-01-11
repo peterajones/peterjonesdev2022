@@ -3,7 +3,7 @@ import { getProviders, signIn, getSession, getCsrfToken} from "next-auth/react";
 export default function SignIn({ providers, csrfToken }) {
   console.log(providers, csrfToken);
   return (
-    <div className="sign-in-wrapper">
+    <div className="content">
       <div className="sign-in-container">
         <div className="email-form-container">
           <form method="post" action="/api/auth/signin/email" className="email-form">
@@ -17,7 +17,7 @@ export default function SignIn({ providers, csrfToken }) {
         </div>
         <div className="divider"></div>
         <div className="signin-providers-section">
-          {Object.values(providers).map((provider) => {
+          {csrfToken && Object.values(providers).map((provider) => {
             console.log(provider)
             if (provider.name === "Email") {
               return;
@@ -49,9 +49,9 @@ export async function getServerSideProps(context) {
   }
 
   const providers = await getProviders(context);
-  console.log(providers);
+  console.log(`Providers: ${providers}`);
   const csrfToken = await getCsrfToken(context);
-  console.log(csrfToken);
+  console.log(`Token: ${csrfToken}`);
   return {
     props: { providers, csrfToken },
   }

@@ -9,9 +9,12 @@ import styles from '../styles/Navbar.module.css';
 
 library.add(faSun, faMoon, faBell, faLock, faUnlock);
 
-const Navbar = () => {
-  const {data: session} = useSession()
-	const [theme, setTheme] = useState('');
+export default function Navbar() {
+  const {data: session, status} = useSession()
+  const user = session
+  console.log(`Session: ${user}`);
+  console.log(status);
+  const [theme, setTheme] = useState('');
 
 	useEffect(() => {
 		const localTheme = localStorage.getItem('theme');
@@ -148,5 +151,3 @@ export async function getServerSideProps(context) {
     }
   }
 }
-
-export default Navbar;
