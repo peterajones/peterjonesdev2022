@@ -70,7 +70,7 @@ export default function Home() {
 							</section>
 							<section className="section section-two">
 								<div className="left">
-									<h3>So what's here?</h3>
+									<h3>So what&apos;s here?</h3>
 									<p>
 										The first thing to understand about React is that it is
 										component based. This makes it easy to build reusable
@@ -79,7 +79,7 @@ export default function Home() {
 									<p>
 										You can design simple views for each state of the application
 										and React will update and render only the components that are
-										affected when the state changes. That's one way that React
+										affected when the state changes. That&apos;s one way that React
 										seems to load so quickly - it only reloads the piece of the
 										page that has changes and not the whole page.
 									</p>
@@ -127,7 +127,7 @@ export default function Home() {
 									<p>
 										There is a short explanation as to what was required to
 										convert the snippet for use with React at the top of each
-										snippet's page.
+										snippet&apos;s page.
 									</p>
 								</div>
 							</section>
@@ -149,7 +149,7 @@ export default function Home() {
 									</p>
 									<p>
 										Turns out the NewsAPI was way too expensive for this site, so
-										I'm pulling some RSS feeds from the{" "}
+										I&apos;m pulling some RSS feeds from the{" "}
 										<a href="https://www.cbc.ca/rss/" target="_new">
 											CBC
 										</a>
