@@ -6,10 +6,10 @@ import Banner from '../Components/Banner'
 
 export default function Home() {
 	const {data: session} = useSession();
-	console.log(session);
+	// console.log(session);
 	if(session) {
 		const {user} = session;
-		console.log(user.name);
+		// console.log(user.name);
 	}
 	const [didMount, setDidMount] = useState(false);
 	const [scroll, setScroll] = useState(0);
