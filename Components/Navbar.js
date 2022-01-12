@@ -24,7 +24,7 @@ export default function Navbar() {
 		} else if (localTheme === 'dark') {
 			document.body.classList.add('dark');
 		}
-	});
+	}, []);
 
 	const toggleTheme = e => {
 		if (theme === 'light') {
