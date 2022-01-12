@@ -12,8 +12,6 @@ library.add(faSun, faMoon, faBell, faLock, faUnlock);
 export default function Navbar() {
   const {data: session, status} = useSession()
   const user = session
-  console.log(`Session: ${user}`);
-  console.log(status);
   const [theme, setTheme] = useState('');
 
 	useEffect(() => {
