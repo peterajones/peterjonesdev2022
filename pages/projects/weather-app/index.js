@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import WeatherApp from '../../../Components/projects/weather-app/WeatherApp';
 import CodeBlocks from '../../../Components/projects/weather-app/code-blocks';
 
-export default function index() {
+export default function Index() {
 	const [codeDescription, setCodeDescription] = useState(false);
 	const [codeBlocks, setCodeBlocks] = useState(false);
 
