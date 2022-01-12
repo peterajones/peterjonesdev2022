@@ -1,35 +1,45 @@
+import {useState, useEffect} from 'react'
 import { getProviders, signIn, getSession, getCsrfToken} from "next-auth/react";
 
 export default function SignIn({ providers, csrfToken }) {
   console.log(providers, csrfToken);
+  const [didMount, setDidMount] = useState(false);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+		setDidMount(true);
+	}, []);
+
   return (
     <div className="content">
-      <div className="sign-in-container">
-        <div className="email-form-container">
-          <form method="post" action="/api/auth/signin/email" className="email-form">
-            <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-            <label>
-              <p className="email-label">Email address</p>
-              <input type="text" id="email" name="email" placeholder="Email address" />
-            </label>
-            <button type="submit" className="button">Use your Email</button>
-          </form>
-        </div>
-        <div className="divider"></div>
-        <div className="signin-providers-section">
-          {csrfToken && Object.values(providers).map((provider) => {
-            console.log(provider)
-            if (provider.name === "Email") {
-              return;
-            }
-            return (
-              <>
-                <div className="signin-providers" key={provider.name}>
-                  <button onClick={() => signIn(provider.id)} className="button">Sign in with {provider.name}</button>
-                </div>
-              </>
-            );
-          })}
+      <div className={`fade-in ${didMount && "visible"}`}>
+        <div className="sign-in-container">
+          <div className="email-form-container">
+            <form method="post" action="/api/auth/signin/email" className="email-form">
+              <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
+              <label>
+                <p className="email-label">Email address</p>
+                <input type="text" id="email" name="email" placeholder="Email address" />
+              </label>
+              <button type="submit" className="button">Use your Email</button>
+            </form>
+          </div>
+          <div className="divider"></div>
+          <div className="signin-providers-section">
+            {csrfToken && Object.values(providers).map((provider) => {
+              console.log(provider)
+              if (provider.name === "Email") {
+                return;
+              }
+              return (
+                <>
+                  <div className="signin-providers" key={provider.name}>
+                    <button onClick={() => signIn(provider.id)} className="button">Sign in with {provider.name}</button>
+                  </div>
+                </>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
