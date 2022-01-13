@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Data from '../../../Components/projects/pagination/Data';
 import CodeBlocks from '../../../Components/projects/pagination/code-blocks';
 
-export default function index() {
+export default function Index() {
 	const [didMount, setDidMount] = useState(false);
 	const [codeDescription, setCodeDescription] = useState(false);
 	const [codeBlocks, setCodeBlocks] = useState(false);
