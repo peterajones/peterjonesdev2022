@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PasswordGenerator from '../../../Components/projects/password-generator/PasswordGenerator';
 import CodeBlocks from '../../../Components/projects/password-generator/code-blocks';
 
-export default function index() {
+export default function Index() {
 	const [codeDescription, setCodeDescription] = useState(false);
 	const [codeBlocks, setCodeBlocks] = useState(false);
 
