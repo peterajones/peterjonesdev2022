@@ -45,6 +45,21 @@ export default function Code() {
 								<a>Pagination</a>
 							</Link>
 						</li>
+						<li>
+							<Link href='/projects/checkbox-styling'>
+								<a>Checkbox Styling</a>
+							</Link>
+						</li>
+						<li>
+							<Link href='/projects/pizza-pie'>
+								<a>Pizza Pie</a>
+							</Link>
+						</li>
+						<li>
+							<Link href='/projects/rollup-counter'>
+								<a>Rollup Counter</a>
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
