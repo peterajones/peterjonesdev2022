@@ -60,6 +60,11 @@ export default function Code() {
 								<a>Rollup Counter</a>
 							</Link>
 						</li>
+						<li>
+							<Link href='/projects/js-clock'>
+								<a>React Twelve Hour Clock</a>
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
