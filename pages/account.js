@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import Head from 'next/head';
 import { getSession, signOut } from 'next-auth/react'
 
 export default function Account({ session }) {

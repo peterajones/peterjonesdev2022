@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import Head from 'next/head'
 import Link from "next/link";
 import Banner from '../Components/Banner'
 // import Title from "./Title";
@@ -28,7 +29,9 @@ export default function Home() {
 
 	return (
 		<>
-		{/* <Title title="2021" /> */}
+		<Head>
+			<title>Peter Jones | Homepage</title>
+		</Head>
 		<Banner src="/images/banners/CanadianFlagReflection.jpg" />
 		<div className="content">
 			<div className={`fade-in ${didMount && "visible"}`}>

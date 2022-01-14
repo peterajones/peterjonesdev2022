@@ -22,7 +22,7 @@ const News = () => {
 	return (
 		<>
 			<Head>
-				<title>Peter Jones | News</title>
+				<title>Peter Jones | News Feeds</title>
 			</Head>
 			<Banner src="/images/banners/News.jpg" />
 			<div className='content' style={{ minHeight: '2000px' }}>

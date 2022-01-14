@@ -25,7 +25,7 @@ export default function Index() {
 	return (
 		<>
 			<Head>
-				<title>Peter Jones | Checkkbox Styling</title>
+				<title>Peter Jones | Checkbox Styling</title>
 			</Head>
 			<div className='content'>
 				<Link href='/projects' className='backBtn'>

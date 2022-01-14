@@ -25,7 +25,7 @@ export default function Index() {
 	return (
 		<>
 			<Head>
-				<title>Peter Jones | Javascript Rollup Counter</title>
+				<title>Peter Jones | Rollup Counter</title>
 			</Head>
 			<div className='content'>
 				<Link href='/projects' className='backBtn'>

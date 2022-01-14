@@ -25,7 +25,7 @@ export default function Index() {
 	return (
 		<>
 			<Head>
-				<title>Peter Jones | Password Generator</title>
+				<title>Peter Jones | Pagination</title>
 			</Head>
 			<div className='content'>
 				<Link href='/projects'>

@@ -25,7 +25,7 @@ export default function Index() {
 	return (
 		<>
 			<Head>
-				<title>Peter Jones | Twelve Hour Clock in React</title>
+				<title>Peter Jones | Twelve Hour Clock</title>
 			</Head>
 			<div className='content'>
 				<Link href='/projects' className='backBtn'>

@@ -22,7 +22,7 @@ export default function Code() {
 	return (
 		<>
 			<Head>
-				<title>Peter Jones | Code</title>
+				<title>Peter Jones | Projects</title>
 			</Head>
 			<Banner src="/images/banners/Keyboard.jpg"/>
 			<div className='content' style={{ minHeight: '2000px' }}>
@@ -62,7 +62,7 @@ export default function Code() {
 						</li>
 						<li>
 							<Link href='/projects/js-clock'>
-								<a>React Twelve Hour Clock</a>
+								<a>React Twelve Hour</a>
 							</Link>
 						</li>
 					</ul>
