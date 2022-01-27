@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Footer from './Footer';
 import Navbar from './Navbar';
-import Banner from './Banner'
+import Footer from './Footer';
+import UpdatesList from './UpdatesList';
 
 const Layout = ({ children }) => {
 	return (

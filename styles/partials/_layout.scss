@@ -29,14 +29,16 @@ body.dark {
 }
 svg.svg-inline--fa.fa-sun.fa-w-16,
 svg.svg-inline--fa.fa-lock.fa-w-14,
-svg.svg-inline--fa.fa-unlock.fa-w-14 {
+svg.svg-inline--fa.fa-unlock.fa-w-14,
+svg.svg-inline--fa.fa-bell.fa-w-14 {
 	font-size: 22px;
 	color: var(--purple);
 	transition: color 0.25s ease-in;
 }
 .dark svg.svg-inline--fa.fa-moon.fa-w-16,
 .dark svg.svg-inline--fa.fa-lock.fa-w-14,
-.dark svg.svg-inline--fa.fa-unlock.fa-w-14 {
+.dark svg.svg-inline--fa.fa-unlock.fa-w-14,
+.dark svg.svg-inline--fa.fa-bell.fa-w-14 {
 	font-size: 22px;
 	color: var(--dark-link);
 	transition: color 0.25s ease-in;
