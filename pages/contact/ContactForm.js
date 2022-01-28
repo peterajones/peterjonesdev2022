@@ -47,7 +47,7 @@ export default function ContactForm() {
 	return (
 		<form
 			name="contact"
-			action="/success"
+			action="/contact/success"
 			method="POST"
 			data-netlify-recaptcha="true"
 			data-netlify="true"
