@@ -1,57 +1,58 @@
-import { useState } from "react";
+// import { useState } from "react";
 // import { Redirect } from 'react-router-dom';
 
-const encode = data => {
-	return Object.keys(data)
-		.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-		.join("&");
-};
+// const encode = data => {
+// 	return Object.keys(data)
+// 		.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+// 		.join("&");
+// };
 
-const ContactForm = props => {
-	console.log(props);
-	const [data, setData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+export default function ContactForm() {
+	// console.log(props);
+	// const [data, setData] = useState({
+	// 	name: "",
+	// 	email: "",
+	// 	message: "",
+	// });
 
 	/* Here’s the juicy bit for posting the form submission */
 
-	const handleSubmit = e => {
-		console.log({ ...data });
-		fetch("/", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encode({ "form-name": "contact", ...data }),
-		})
-			.then(() =>
-				setData({
-					name: "",
-					email: "",
-					message: "",
-				})
-			)
-			.catch(error => alert(error));
-		e.preventDefault();
-		props.history.push("/contact/thank-you");
-	};
+	// const handleSubmit = e => {
+	// 	console.log({ ...data });
+	// 	fetch("/", {
+	// 		method: "POST",
+	// 		headers: { "Content-Type": "application/x-www-form-urlencoded" },
+	// 		body: encode({ "form-name": "contact", ...data }),
+	// 	})
+	// 		.then(() =>
+	// 			setData({
+	// 				name: "",
+	// 				email: "",
+	// 				message: "",
+	// 			})
+	// 		)
+	// 		.catch(error => alert(error));
+	// 	e.preventDefault();
+	// 	props.history.push("/contact/thank-you");
+	// };
 
-	const handleChange = e => {
-		const { name, value } = e.target;
-		setData({
-			...data,
-			[name]: value,
-		});
-	};
+	// const handleChange = e => {
+	// 	const { name, value } = e.target;
+	// 	setData({
+	// 		...data,
+	// 		[name]: value,
+	// 	});
+	// };
 
 	return (
 		<form
 			name="contact"
+			action="/success"
 			method="POST"
 			data-netlify-recaptcha="true"
 			data-netlify="true"
 			style={{ minHeight: "400px" }}
-			onSubmit={handleSubmit}
+			// onSubmit={handleSubmit}
 		>
 			<input type="hidden" name="form-name" value="contact" />
 			<p>
@@ -61,9 +62,9 @@ const ContactForm = props => {
 						type="text"
 						name="name"
 						id="name"
-						value={data.name}
+						// value={data.name}
 						required
-						onChange={handleChange}
+						// onChange={handleChange}
 					/>
 				</label>
 			</p>
@@ -74,9 +75,9 @@ const ContactForm = props => {
 						type="email"
 						name="email"
 						id="email"
-						value={data.email}
+						// value={data.email}
 						required
-						onChange={handleChange}
+						// onChange={handleChange}
 					/>
 				</label>
 			</p>
@@ -86,9 +87,9 @@ const ContactForm = props => {
 					<textarea
 						name="message"
 						id="message"
-						value={data.message}
+						// value={data.message}
 						required
-						onChange={handleChange}
+						// onChange={handleChange}
 					/>
 				</label>
 			</p>
