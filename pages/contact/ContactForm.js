@@ -102,5 +102,3 @@ export default function ContactForm() {
 		</form>
 	);
 };
-
-export default ContactForm;
