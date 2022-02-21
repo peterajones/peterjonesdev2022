@@ -55,7 +55,7 @@ export default function ContactForm(props) {
 			// style={{ minHeight: "400px" }}
 			// onSubmit={handleSubmit}
 		>
-			<input type="hidden" name="form-name" value="contact" />
+			<input type="hidden" name="form-name" value="contactForm" />
 			<p>
 				<label htmlFor="name">
 					Your Name:{" "}
