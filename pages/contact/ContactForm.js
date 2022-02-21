@@ -7,8 +7,8 @@
 // 		.join("&");
 // };
 
-export default function ContactForm() {
-	// console.log(props);
+export default function ContactForm(props) {
+	console.log(props);
 	// const [data, setData] = useState({
 	// 	name: "",
 	// 	email: "",
