@@ -46,12 +46,13 @@ export default function ContactForm(props) {
 
 	return (
 		<form
-			name="contact"
+			name="contactForm"
 			action="/contact/success"
 			method="POST"
 			data-netlify-recaptcha="true"
 			data-netlify="true"
-			style={{ minHeight: "400px" }}
+			Content-Type="application/x-www-form-urlencoded"
+			// style={{ minHeight: "400px" }}
 			// onSubmit={handleSubmit}
 		>
 			<input type="hidden" name="form-name" value="contact" />
