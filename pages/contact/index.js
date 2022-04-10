@@ -29,8 +29,8 @@ const Contact = props => {
 			<div className={`fade-in ${didMount && "visible"}`}>
 				<div className="container">
 					<div className="content">
-						<h1>Contact Me</h1>
-						<p>Please fill out the form below. I will get back to you ASAP!</p>
+						{/* <h1>Contact Me</h1>
+						<p>Please fill out the form below. I will get back to you ASAP!</p> */}
 						<ContactForm history={props.history} />
 					</div>
 				</div>

@@ -1,105 +1,68 @@
-import { useState } from "react";
-// import { Redirect } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import Head from 'next/head'
+// import styles from '../styles/Home.module.css'
 
-const encode = data => {
-	return Object.keys(data)
-		.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-		.join("&");
-};
+export default function Home() {
+  const [success, setSuccess] = useState(false);
 
-export default function ContactForm(props) {
-	console.log(props);
-	const [data, setData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+  useEffect(() => {
+    if ( window.location.search.includes('success=true') ) {
+      setSuccess(true);
+    }
+  }, []);
 
-	/* Here’s the juicy bit for posting the form submission */
-
-	const handleSubmit = e => {
-		console.log({ ...data });
-		fetch("/", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encode({ "form-name": "contactForm", ...data }),
-		})
-			.then(() =>
-				setData({
-					name: "",
-					email: "",
-					message: "",
-				})
-			)
-			.catch(error => alert(error));
-		e.preventDefault();
-		props.history.push("/contact/success");
-	};
-
-	const handleChange = e => {
-		const { name, value } = e.target;
-		setData({
-			...data,
-			[name]: value,
-		});
-	};
-
-	return (
-		<form
-			name="contactForm"
-			action="/contact/success"
-			method="POST"
-			data-netlify-recaptcha="true"
-			data-netlify="true"
-			Content-Type="application/x-www-form-urlencoded"
-			// style={{ minHeight: "400px" }}
-			onSubmit={handleSubmit}
-		>
-			<input type="hidden" name="form-name" value="contactForm" />
-			<p>
-				<label htmlFor="name">
-					Your Name:{" "}
-					<input
-						type="text"
-						name="name"
-						id="name"
-						value={data.name}
-						required
-						onChange={handleChange}
-					/>
-				</label>
-			</p>
-			<p>
-				<label htmlFor="email">
-					Your Email:{" "}
-					<input
-						type="email"
-						name="email"
-						id="email"
-						value={data.email}
-						required
-						onChange={handleChange}
-					/>
-				</label>
-			</p>
-			<p>
-				<label htmlFor="message">
-					Message:{" "}
-					<textarea
-						name="message"
-						id="message"
-						value={data.message}
-						required
-						onChange={handleChange}
-					/>
-				</label>
-			</p>
-			<div data-netlify-recaptcha="true" />
-			<p>
-				<button className="btn-submit" type="submit">
-					Send
-				</button>
-			</p>
-		</form>
-	);
-};
+  return (
+    <>
+      <div className='container'>
+        {/* <Head>
+          <title>Contact Form</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head> */}
+  
+        <main className='main'>
+          <h1 className='title'>Contact Form</h1>
+  
+          {success && (
+            <p style={{ color: 'green'}}>
+              Successfully submitted form!
+            </p>
+          )}
+  
+          <div className='grid'>
+            <div className='card'>
+              <form name="contact" method="POST" action="/?success=true" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
+                <p>
+                  <label htmlFor="name">Name</label>
+                  <input type="text" id="name" name="name" />
+                </p>
+                <p>
+                  <label htmlFor="email">Email</label>
+                  <input type="text" id="email" name="email" />
+                </p>
+                <p>
+                  <label htmlFor="message">Message</label>
+                  <textarea id="message" name="message"></textarea>
+                </p>
+                <p>
+                  <button type="submit">Send</button>
+                </p>
+              </form>
+            </div>
+          </div>
+        </main>
+  
+        {/* <footer className="footer">
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by{' '}
+            <img src="/vercel.svg" alt="Vercel Logo" className='logo' />
+          </a>
+        </footer> */}
+      </div>
+    </>
+  )
+}
