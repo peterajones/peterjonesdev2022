@@ -33,7 +33,7 @@ export default function ContactForm(props) {
 			)
 			.catch(error => alert(error));
 		e.preventDefault();
-		// props.history.push("/contact/success");
+		props.history.push("/contact/success");
 	};
 
 	const handleChange = e => {
