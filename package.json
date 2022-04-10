@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "https": "node server.js",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start -p 3001",
     "lint": "next lint"
   },
