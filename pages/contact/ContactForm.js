@@ -8,6 +8,7 @@ export default function Home() {
   useEffect(() => {
     if ( window.location.search.includes('success=true') ) {
       setSuccess(true);
+      props.history.push("/contact/success");
     }
   }, []);
 
