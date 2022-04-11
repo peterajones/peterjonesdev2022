@@ -15,10 +15,6 @@ export default function Home() {
   return (
     <>
       <div className='container'>
-        {/* <Head>
-          <title>Contact Form</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head> */}
   
         <main className='main'>
           <h1 className='title'>Contact Form</h1>
@@ -30,8 +26,8 @@ export default function Home() {
           )}
   
           <div className='grid'>
-            <div className='card'>
-              <form name="contact" method="POST" action="/?success=true" data-netlify="true">
+            <div className='form-container'>
+              <form name="contact" method="POST" action="/contact/success" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />
                 <p>
                   <label htmlFor="name">Name</label>
@@ -39,30 +35,19 @@ export default function Home() {
                 </p>
                 <p>
                   <label htmlFor="email">Email</label>
-                  <input type="text" id="email" name="email" />
+                  <input type="text" id="email" name="email" className='contact-email' />
                 </p>
                 <p>
                   <label htmlFor="message">Message</label>
                   <textarea id="message" name="message"></textarea>
                 </p>
                 <p>
-                  <button type="submit">Send</button>
+                  <button type="submit" className='btn-submit'>Send</button>
                 </p>
               </form>
             </div>
           </div>
         </main>
-  
-        {/* <footer className="footer">
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <img src="/vercel.svg" alt="Vercel Logo" className='logo' />
-          </a>
-        </footer> */}
       </div>
     </>
   )
