@@ -34,14 +34,18 @@
 }
 
 /* Toggle Theme */
-svg.svg-inline--fa.fa-sun.fa-w-16,
-svg.svg-inline--fa.fa-moon.fa-w-16,
-svg.svg-inline--fa.fa-bell.fa-w-16,
-svg.svg-inline--fa.fa-bell.fa-w-14 {
+svg.svg-inline--fa.fa-sun,
+svg.svg-inline--fa.fa-moon,
+svg.svg-inline--fa.fa-bell {
 	font-size: 22px;
 	color: rebeccapurple;
 	-webkit-transition: color 0.35s ease-in;
 	transition: color 0.35s ease-in;
+}
+.dark svg.svg-inline--fa.fa-sun,
+.dark svg.svg-inline--fa.fa-moon,
+.dark svg.svg-inline--fa.fa-bell {
+	color: #ffa804;
 }
 
 button.faIcon {
