@@ -18,6 +18,9 @@ input.contact-email {
   width: auto;
   border: 1px solid #ccc;
 }
+.dark input.contact-email {
+  background-color: var(--white);
+}
 textarea {
   display: block;
   min-width: 300px;
