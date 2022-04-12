@@ -27,7 +27,7 @@ export default function Home() {
   
           <div className='grid'>
             <div className='form-container'>
-              <form name="contact" method="POST" action="/contact/success" data-netlify="true">
+              <form name="contact" method="POST" action="/contact/success" netlify-honeypot="bot-field" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />
                 <p>
                   <label htmlFor="name">Name</label>
