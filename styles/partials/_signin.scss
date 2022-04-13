@@ -4,6 +4,8 @@
 }
 .sign-in-container {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	max-width: fit-content;
 	margin: 50px auto;
 	padding: 20px 30px;
@@ -13,9 +15,15 @@
 .dark .sign-in-container {
 	border: 1px solid var(--white);
 }
-.email-form-container {
+/* .email-form-container {
 	width: 80%;
 	margin: 0 auto;
+} */
+.email-form {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
 }
 .email-label {
 	display: none;

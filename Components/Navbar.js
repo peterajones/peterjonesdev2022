@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSun, faMoon, faBell, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import UpdatesList from './UpdatesList';
-import styles from '../styles/Navbar.module.css';
+// import styles from '../styles/Navbar.module.css';
 
 library.add(faSun, faMoon, faBell, faLock, faUnlock);
 
@@ -48,8 +48,8 @@ export default function Navbar() {
 
 	return (
 		<>
-			<nav className={styles.nav}>
-				<div className={styles.navContent}>
+			<nav className="nav">
+				<div className="navContent">
 					<div className='logo'>
 						{theme === 'light' ? (
 							<Link href='/'>
@@ -75,7 +75,7 @@ export default function Navbar() {
 							</Link>
 						)}
 					</div>
-					<div className={styles.topNavLinks}>
+					<div className="topNavLinks">
 						<Link href='/projects'>
 							<a>Projects</a>
 						</Link>
@@ -97,7 +97,7 @@ export default function Navbar() {
 							name='toggle theme'
 							title='Toggle Theme'
 							aria-label='Toggle Theme'
-							className={styles.faIcon}
+							className="faIcon"
 							onClick={toggleTheme}
 						>
 							{theme === 'light' ? (
@@ -111,7 +111,7 @@ export default function Navbar() {
 							name='toggle session'
 							title='Session SignIn'
 							aria-label='Session SignIn'
-							className={styles.faIcon}
+							className="faIcon"
 							onClick={() => signIn()}
 						>
 							{theme === 'light' ? (
@@ -125,7 +125,7 @@ export default function Navbar() {
 							name='toggle session'
 							title='Session SignOut'
 							aria-label='Session SignOut'
-							className={styles.faIcon}
+							className="faIcon"
 							onClick={() => signOut()}
 						>
 							{theme === 'light' ? (
@@ -139,7 +139,7 @@ export default function Navbar() {
 							name="toggle updates modal"
 							title="Latest Updates"
 							aria-label="Toggle Updates Modal"
-							className={styles.faIcon}
+							className="faIcon"
 							onClick={() => toggleUpdatesModal()}
 						>
 							{theme === "light" ? (

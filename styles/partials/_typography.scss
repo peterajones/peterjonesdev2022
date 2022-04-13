@@ -49,7 +49,7 @@ p {
 a {
 	color: rebeccapurple;
 	text-decoration: none;
-	transition: color 0.15s ease-in;
+	transition: all 0.15s ease-in;
 }
 a:hover {
 	color: #ff0000;
@@ -58,7 +58,7 @@ a:hover {
 .dark a {
 	color: #ffa804;
 	text-decoration: none;
-	transition: color 0.15s ease-in;
+	transition: all 0.15s ease-in;
 }
 .dark a:hover {
 	color: #ff7272;
