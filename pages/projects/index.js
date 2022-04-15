@@ -29,40 +29,40 @@ export default function Code() {
 				<div className={`fade-in ${didMount && "visible"}`}>
 					<h1>Projects</h1>
 					<p>This is where all of the projects go!</p>
-					<ul>
-						<li>
+					<ul className='items-container'>
+						<li className='item'>
 							<Link href='/projects/weather-app'>
 								<a>Weather App</a>
 							</Link>
 						</li>
-						<li>
+						<li className='item'>
 							<Link href='/projects/random-password-generator'>
 								<a>Random Password Generator</a>
 							</Link>
 						</li>
-						<li>
+						<li className='item'>
 							<Link href='/projects/pagination'>
 								<a>Pagination</a>
 							</Link>
 						</li>
-						<li>
+						<li className='item'>
 							<Link href='/projects/checkbox-styling'>
 								<a>Checkbox Styling</a>
 							</Link>
 						</li>
-						<li>
+						<li className='item'>
 							<Link href='/projects/pizza-pie'>
 								<a>Pizza Pie</a>
 							</Link>
 						</li>
-						<li>
+						<li className='item'>
 							<Link href='/projects/rollup-counter'>
 								<a>Rollup Counter</a>
 							</Link>
 						</li>
-						<li>
+						<li className='item'>
 							<Link href='/projects/js-clock'>
-								<a>React Twelve Hour</a>
+								<a>React Twelve Hour Clock</a>
 							</Link>
 						</li>
 					</ul>

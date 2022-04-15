@@ -27,35 +27,35 @@ const News = () => {
 			<Banner src="/images/banners/News.jpg" />
 			<div className='content' style={{ minHeight: '2000px' }}>
 				<div className={`fade-in ${didMount && "visible"}`}>
-					<h1>News</h1>
+					<h1>News from the Internet</h1>
 					<p>This is the index page of the news section...</p>
-					<ul>
-						<li>
+					<ul className='items-container'>
+						<li className="item">
 							<Link href='/news/cbc-world-news'>
 								<a>CBC World News</a>
 							</Link>
 						</li>
-						<li>
+						<li className="item">
 							<Link href='/news/cbc-top-stories'>
 								<a>CBC News Top Stories</a>
 							</Link>
 						</li>
-						<li>
+						<li className="item">
 							<Link href='/news/cbc-toronto-news'>
 								<a>CBC Toronto News</a>
 							</Link>
 						</li>
-						<li>
+						<li className="item">
 							<Link href='/news/cbc-technology-news'>
 								<a>CBC Technology News</a>
 							</Link>
 						</li>
-						<li>
+						<li className="item">
 							<Link href='/news/cnbc-international-news'>
 								<a>CNBC International News</a>
 							</Link>
 						</li>
-						<li>
+						<li className="item">
 							<Link href='/news/euro-news'>
 								<a>CNBC Euro News</a>
 							</Link>
