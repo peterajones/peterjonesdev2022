@@ -29,3 +29,6 @@ li.item {
   padding: 10px;
   transition: color .25s ease-in;
 }
+.dark .card-title {
+  color: var(--light-text);
+}
