@@ -9,7 +9,18 @@ ul.items-container {
 }
 li.item {
   position: relative;
+  display: flex;
+  justify-content: center;
   min-width: 325px;
-  padding: 50px;
   border: 1px solid #ccc;
+  cursor: pointer;
+}
+.card-title {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 10px;
+  transition: color .25s ease-in;
 }

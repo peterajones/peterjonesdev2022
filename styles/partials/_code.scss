@@ -26,7 +26,7 @@ a:hover.btnLink {
 	border-color: #639;
 	text-decoration: none;
 }
-.truncate {
+.truncate{
 	display: -webkit-box;
 	max-width: var(--maxWidth);
 	max-height: calc(var(--fontSize) * var(--lineHeight) * var(--numLines));
@@ -199,6 +199,8 @@ section.code pre {
 }
 .card {
 	position: relative;
+	display: flex;
+  flex-direction: column;
 	width: 290px;
 	margin: 10px;
 	min-height: 400px;
