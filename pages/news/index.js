@@ -1,6 +1,10 @@
 import {useState, useEffect} from 'react'
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
+import cbc from '../../public/images/news/cbc.jpg';
+import cnbc from '../../public/images/news/cnbc.jpg';
+import euronews from '../../public/images/news/euronews.jpg';
 import Banner from '../../Components/Banner';
 
 const News = () => {
@@ -27,37 +31,54 @@ const News = () => {
 			<Banner src="/images/banners/News.jpg" />
 			<div className='content' style={{ minHeight: '2000px' }}>
 				<div className={`fade-in ${didMount && "visible"}`}>
-					<h1>News from the Internet</h1>
-					<p>This is the index page of the news section...</p>
+					<h1 className="news page">RSS News Feeds</h1>
 					<ul className='items-container'>
-						<li className="item">
-							<Link href='/news/cbc-world-news'>
-								<a>CBC World News</a>
+						<li className="news item">
+							<Link href='/news/cbc-world-news' passHref>
+								<div className="item-content">
+									<Image src={cbc} width={100} height={100} />
+									<a className='item-title'>CBC World News</a>
+								</div>
 							</Link>
 						</li>
-						<li className="item">
-							<Link href='/news/cbc-top-stories'>
-								<a>CBC News Top Stories</a>
+						<li className="news item">
+							<Link href='/news/cbc-top-stories' passHref>
+								<div className="item-content">
+									<Image src={cbc} width={100} height={100} />
+									<a className="item-title">CBC News Top Stories</a>
+								</div>
 							</Link>
 						</li>
-						<li className="item">
-							<Link href='/news/cbc-toronto-news'>
-								<a>CBC Toronto News</a>
+						<li className="news item">
+							<Link href='/news/cbc-toronto-news' passHref>
+								<div className="item-content">
+									<Image src={cbc} width={100} height={100} />
+									<a className="item-title">CBC Toronto News</a>
+								</div>
 							</Link>
 						</li>
-						<li className="item">
-							<Link href='/news/cbc-technology-news'>
-								<a>CBC Technology News</a>
+						<li className="news item">
+							<Link href='/news/cbc-technology-news' passHref>
+								<div className="item-content">
+									<Image src={cbc} width={100} height={100} />
+									<a className="item-title">CBC Technology News</a>
+								</div>
 							</Link>
 						</li>
-						<li className="item">
-							<Link href='/news/cnbc-international-news'>
-								<a>CNBC International News</a>
+						<li className="news item">
+							<Link href='/news/cnbc-international-news' passHref>
+								<div className="item-content">
+									<Image src={cnbc} width={100} height={100} />
+									<a className="item-title">CNBC International News</a>
+								</div>
 							</Link>
 						</li>
-						<li className="item">
-							<Link href='/news/euro-news'>
-								<a>CNBC Euro News</a>
+						<li className="news item">
+							<Link href='/news/euro-news' passHref>
+								<div className="item-content">
+									<Image src={euronews} width={100} height={100} />
+									<a className="item-title">CNBC Euro News</a>
+								</div>
 							</Link>
 						</li>
 					</ul>

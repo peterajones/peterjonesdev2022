@@ -20,6 +20,10 @@ li.item {
   min-width: 325px;
   border: 1px solid #ccc;
   cursor: pointer;
+  transition: all 0.25s ease-in;
+}
+li.item:hover {
+  transform: scale(1.05);
 }
 .card-title {
   text-decoration: none;

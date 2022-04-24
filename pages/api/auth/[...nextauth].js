@@ -5,7 +5,7 @@ import EmailProvider from "next-auth/providers/email"
 import GithubProvider from "next-auth/providers/github"
 import GitlabProvider from "next-auth/providers/gitlab"
 import GoogleProvider from "next-auth/providers/google"
-// import { signIn } from "next-auth/react";
+import NetlifyProvider from "next-auth/providers/netlify";
 
 export default NextAuth({
   // DB Adapter
@@ -31,6 +31,10 @@ export default NextAuth({
     GoogleProvider({
     clientId: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET
+  }),
+  NetlifyProvider({
+    clientId: process.env.NETLIFY_CLIENT_ID,
+    clientSecret: process.env.NETLIFY_CLIENT_SECRET
   }),
     // ...add more providers here
   ],
