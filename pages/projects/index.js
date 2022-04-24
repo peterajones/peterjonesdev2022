@@ -41,11 +41,10 @@ export default function Code() {
 			<Banner src="/images/banners/Keyboard.jpg"/>
 			<div className='content' style={{ minHeight: '2000px' }}>
 				<div className={`fade-in ${didMount && "visible"}`}>
-					<h1>Projects</h1>
-					<p>This is where all of the projects go!</p>
+					<h1 className='projects page'>Projects</h1>
 					<ul className='items-container'>
 						<li className='item'>
-							<Link href='/projects/weather-app'>
+							<Link href='/projects/weather-app' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeHTML} alt="HTML" className='tech-badge' width={48} height={16} />
@@ -65,7 +64,7 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/random-password-generator'>
+							<Link href='/projects/random-password-generator' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeREACT} alt="React"  className='tech-badge' width={48} height={16}/>
@@ -92,7 +91,7 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/pagination'>
+							<Link href='/projects/pagination' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeREACT} alt="React" className='tech-badge' width={48} height={16} />
@@ -115,7 +114,7 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/checkbox-styling'>
+							<Link href='/projects/checkbox-styling' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeHTML} alt="HTML" className='tech-badge' width={48} height={16} />
@@ -142,7 +141,7 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/pizza-pie'>
+							<Link href='/projects/pizza-pie' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeHTML} alt="HTML" className='tech-badge' width={48} height={16} />
@@ -167,7 +166,7 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/rollup-counter'>
+							<Link href='/projects/rollup-counter' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeCSS} alt="CSS" className='tech-badge' width={48} height={16} />
@@ -194,7 +193,7 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/js-clock'>
+							<Link href='/projects/js-clock' passHref>
 								<div className="card">
 									<div className="card-badges">
 										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />

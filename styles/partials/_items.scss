@@ -1,6 +1,11 @@
+.page {
+  text-align: center;
+  padding-bottom: 20px;
+}
 ul.items-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   grid-gap: 20px;
   gap: 20px;
   list-style: none;
