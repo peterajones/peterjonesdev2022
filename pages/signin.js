@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react'
 import { getProviders, signIn, getSession, getCsrfToken} from "next-auth/react";
 
 export default function SignIn({ providers, csrfToken }) {
-  // console.log(providers, csrfToken);
   const [didMount, setDidMount] = useState(false);
 
 	useEffect(() => {
