@@ -97,10 +97,10 @@ export default function Navbar() {
 										width={25}
 										height={25}
 									/>
-								) : ('')}
+								) : ('Account')}
 								</a>
 							</Link>
-	          ) : ('Account')
+	          ) : ('')
 						}
 						<button
 							name='toggle theme'
