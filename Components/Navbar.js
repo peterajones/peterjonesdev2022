@@ -6,12 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSun, faMoon, faBell, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import UpdatesList from './UpdatesList';
-// import styles from '../styles/Navbar.module.css';
+import styles from '../styles/Navbar.module.css';
 
 library.add(faSun, faMoon, faBell, faLock, faUnlock);
 
 export default function Navbar() {
   const {data: session, status} = useSession()
+	console.log(session);
   const user = session
   const [theme, setTheme] = useState('');
 	const [modal, setModal] = useState(false);
@@ -87,11 +88,19 @@ export default function Navbar() {
 						</Link>
 	          {session ? (
 							<Link href='/account'>
-								<a>Account 
-									{/* <Image src={session.user.image} alt={session.user.name} className={styles.avatar} /> */}
+								<a className='avatar-link'>
+								{session.user.image ? (
+									<Image
+										src={session.user.image}
+										alt={session.user.name}
+										className={styles.avatar}
+										width={25}
+										height={25}
+									/>
+								) : ('')}
 								</a>
 							</Link>
-	          ) : ('')
+	          ) : ('Account')
 						}
 						<button
 							name='toggle theme'

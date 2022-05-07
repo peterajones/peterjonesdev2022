@@ -9,8 +9,8 @@ export default function Home() {
 	const {data: session} = useSession();
 	console.log(session);
 	if(session) {
-		const {user} = session;
-		console.log(user.name);
+		const {user} = session.user;
+		console.log(session.user.name);
 	}
 	const [didMount, setDidMount] = useState(false);
 	const [scroll, setScroll] = useState(0);
@@ -40,7 +40,7 @@ export default function Home() {
 				<section className="section section-one">
 					<h2>Welcome</h2>
 					{session ? (
-						<p>Thank you for visiting my website <span className="display-name">{user.name}</span>.</p>
+						<p>Thank you for visiting my website <span className="display-name">{session.user.name}</span>.</p>
 					) : (
 						<p>Thank you for visiting my website.</p>
 					)}

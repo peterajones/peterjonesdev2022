@@ -32,7 +32,12 @@
 .topNavLinks a {
 	margin-left: 20px;
 }
-
+.avatar-link {
+	position: relative;
+  top: 7px;
+  display: inline-block;
+	border-radius: 50%;
+}
 /* Toggle Theme */
 svg.svg-inline--fa.fa-sun,
 svg.svg-inline--fa.fa-moon,
