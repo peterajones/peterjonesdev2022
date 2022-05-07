@@ -90,13 +90,7 @@ export default function Navbar() {
 							<Link href='/account'>
 								<a className='avatar-link'>
 								{session.user.image ? (
-									<Image
-										src={session.user.image}
-										alt={session.user.name}
-										className={styles.avatar}
-										width={25}
-										height={25}
-									/>
+									<img src={session.user.image} alt='avatar' className='avatar' />
 								) : ('Account')}
 								</a>
 							</Link>
