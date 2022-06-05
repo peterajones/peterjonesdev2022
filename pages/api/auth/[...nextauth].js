@@ -5,7 +5,8 @@ import EmailProvider from "next-auth/providers/email"
 import GithubProvider from "next-auth/providers/github"
 import GitlabProvider from "next-auth/providers/gitlab"
 import GoogleProvider from "next-auth/providers/google"
-import NetlifyProvider from "next-auth/providers/netlify";
+// import NetlifyProvider from "next-auth/providers/netlify";
+const sgMail = require("@sendgrid/mail")
 
 export default NextAuth({
   // DB Adapter
@@ -17,7 +18,14 @@ export default NextAuth({
   // Configure one or more authentication providers
   providers: [
     EmailProvider({
-      server: process.env.EMAIL_SERVER,
+      server: {
+        host: process.env.SENDGRID_SERVER,
+        port: process.env.SENDGRID_PORT,
+        auth: {
+          user: process.env.SENDGRID_USERNAME,
+          pass: process.env.SENDGRID_SMTP_PASSWORD,
+        }
+      },
       from: process.env.EMAIL_FROM
     }),
     GithubProvider({
@@ -32,10 +40,10 @@ export default NextAuth({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
-    NetlifyProvider({
-      clientId: process.env.NETLIFY_CLIENT_ID,
-      clientSecret: process.env.NETLIFY_CLIENT_SECRET
-    }),
+    // NetlifyProvider({
+    //   clientId: process.env.NETLIFY_CLIENT_ID,
+    //   clientSecret: process.env.NETLIFY_CLIENT_SECRET
+    // }),
     // ...add more providers here
   ],
   secret: process.env.NEXTAUTH_SECRET

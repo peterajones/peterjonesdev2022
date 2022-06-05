@@ -13,7 +13,7 @@ export default function SignIn({ providers, csrfToken }) {
     <div className="content">
       <div className={`fade-in ${didMount && "visible"}`}>
         <div className="sign-in-container">
-          {/* <div className="email-form-container">
+          <div className="email-form-container">
             <form method="post" action="/api/auth/signin/email" className="email-form">
               <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
               <label>
@@ -22,8 +22,8 @@ export default function SignIn({ providers, csrfToken }) {
               </label>
               <button type="submit" className="button">Sign In with Email</button>
             </form>
-          </div> */}
-          {/* <div className="divider"></div> */}
+          </div>
+          <div className="divider"></div>
           <div className="signin-providers-section">
             {csrfToken && Object.values(providers).map((provider) => {
               if (provider.name === "Email") {
