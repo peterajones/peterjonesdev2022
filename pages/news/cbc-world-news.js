@@ -69,6 +69,7 @@ const CBCWorldNews = () => {
 							alt='loading'
 							width='64'
 							height='64'
+							unoptimized={true}
 						/>
 						<p>Proxy server is warming up...</p>
 					</>
@@ -79,6 +80,7 @@ const CBCWorldNews = () => {
 							alt='loading'
 							width='64'
 							height='64'
+							unoptimized={true}
 						/>
 						<p>Proxy server is warming up...</p>
 					</>
