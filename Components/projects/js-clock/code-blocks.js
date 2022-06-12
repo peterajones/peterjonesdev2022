@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import Prism from 'prismjs';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 const CodeBlocks = ({ codeBlocks, toggleCodeBlocks }) => {
@@ -18,7 +20,7 @@ const CodeBlocks = ({ codeBlocks, toggleCodeBlocks }) => {
 </body>
 </html>`;
 
-	const jsString = `function displayTime() {
+  const jsString = `function displayTime() {
   var currTime = new Date();
   var hrs = currTime.getHours();
   var mins = currTime.getMinutes();
@@ -47,7 +49,7 @@ const CodeBlocks = ({ codeBlocks, toggleCodeBlocks }) => {
 }
 displayTime();`;
 
-	const cssString = `.center {
+  const cssString = `.center {
   top: 50%;
   left: 40%;
   position: fixed;
@@ -55,6 +57,12 @@ displayTime();`;
 h1 {
   font-family: Arial, sans-serif;
 }`;
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, [])
 
 	return (
 		<>
@@ -64,7 +72,7 @@ h1 {
 					and JS.
 				</p>
 				<div className='code-header'>index.html</div>
-				<SyntaxHighlighter language='html' style={atomDark}>
+				<SyntaxHighlighter language='html' data-language="html" className=" html" style={atomDark}>
 					{htmlString}
 				</SyntaxHighlighter>
 				<div className='code-header'>script.js</div>

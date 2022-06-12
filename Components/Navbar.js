@@ -6,13 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSun, faMoon, faBell, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import UpdatesList from './UpdatesList';
-import styles from '../styles/Navbar.module.css';
 
 library.add(faSun, faMoon, faBell, faLock, faUnlock);
 
 export default function Navbar() {
   const {data: session, status} = useSession()
-	console.log(session);
   const user = session
   const [theme, setTheme] = useState('');
 	const [modal, setModal] = useState(false);

@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import Prism from 'prismjs';
 
 const CodeBlocks = ({ codeBlocks, toggleCodeBlocks }) => {
 	const htmlString = `<!DOCTYPE html>
@@ -114,6 +116,12 @@ btnReset.addEventListener('click', () => {
   count = 0;
   counter.innerHTML = \`<span>{count}</span>\`;
 });`;
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, [])
 
 	return (
 		<>

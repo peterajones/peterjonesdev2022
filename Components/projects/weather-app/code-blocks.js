@@ -1,6 +1,8 @@
+import {useEffect} from 'react';
 import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import Prism from 'prismjs';
 
 const CodeBlocks = props => {
 	const htmlString = `<!DOCTYPE html>
@@ -344,6 +346,12 @@ p.error-msg {
   font-weight: 600;
 }
 `;
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, []);
 
 	return (
 		<>

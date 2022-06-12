@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import Prism from 'prismjs';
 
 const CodeBlocks = props => {
 	const htmlString = `<!DOCTYPE html>
@@ -80,7 +82,6 @@ const randomFunc = {
 
 generateElement.addEventListener('click', () => {
   const length = parseInt(lengthElement.innerHTML);
-  // console.log(length);
   const hasUpper = uppercaseElement.checked;
   const hasLower = lowercaseElement.checked;
   const hasNumbers = numbersElement.checked;
@@ -148,7 +149,6 @@ clipboardElement.addEventListener('click', () => {
   textarea.select();
   document.execCommand('copy');
   textarea.remove();
-  //alert('Password copied to clipboard!');
   msg.classList.add('fade-out');
   msg.innerText = 'Copied!';
   setTimeout(() => {
@@ -164,7 +164,6 @@ function generatePassword(length, upper, lower, number, symbol) {
   // 2. filter out unchecked types
   const typesCount = upper + lower + number + symbol;
   const typesArr = [{ upper }, { lower }, { number }, { symbol }].filter((item) => Object.values(item)[0]);
-  // console.log('typesArr: ' + typesArr);
   if (typesCount === 0) {
     return '';
   }
@@ -172,12 +171,9 @@ function generatePassword(length, upper, lower, number, symbol) {
   for (let i = 0; i < length; i += typesCount) {
     typesArr.forEach((type) => {
       const funcName = Object.keys(type)[0];
-      // console.log('funcName: ' + funcName);
-
       generatedPassword += randomFunc[funcName]();
     });
   }
-  // console.log(generatedPassword.slice(0, length));
   // 4. Add generated pw to the pw var and return
   const finalPassword = generatedPassword.slice(0, length);
   return finalPassword;
@@ -343,6 +339,12 @@ span#length_disp {
     font-size: 14px;
   }
 }`;
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, []);
 
 	return (
 		<>
