@@ -3,11 +3,10 @@ import { useSession } from "next-auth/react";
 import Head from 'next/head'
 import Link from "next/link";
 import Banner from '../Components/Banner'
-// import Title from "./Title";
 
 export default function Home() {
 	const {data: session} = useSession();
-	console.log(session);
+	// console.log(session);
 	if(session) {
 		const {user} = session.user;
 		console.log(session.user.name);
