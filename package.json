@@ -2,7 +2,6 @@
   "name": "peterjonesdev2022",
   "private": true,
   "scripts": {
-    "postinstall": "keystone postinstall",
     "dev": "next dev -p 3000",
     "https": "node server.js",
     "build": "next build",
