@@ -66,6 +66,7 @@ const Users = ({ users, loading }) => {
 									</a>
 								</div>
 							</div>
+							<span style={{fontSize: '11px'}}>Lat: {user.address.geo.lat}, Lng: {user.address.geo.lng}</span>
 						</div>
 						<div id={'map' + user.id} className='map'>
 							<Maps

@@ -8,28 +8,10 @@ const containerStyle = {
 
 
 function Maps(props) {
-	console.log(props.lng);
 	const center = {
-		lat: props.lat,
-		lng: props.lng
+		lat: parseInt(props.lat),
+		lng: parseInt(props.lng)
 	};
-	let [showingInfoWindow, setShowingInfoWindow] = useState(false);
-	let [activeMarker, setActiveMarker] = useState({});
-	let	[selectedPlace, setSelectedPlace] = useState();
-
-	// function onMarkerClick = (props, marker, e) => {
-	// 	setSelectedPlace =  props.location
-	// 	setActiveMarker =  marker
-	// 	setShowingInfoWindow = true
-	// 	};
-
-	// onMapClicked = props => {
-	// 	console.log('click');
-	// 	if (showingInfoWindow) {
-	// 		setShowingInfoWindow = false
-	// 		setActiveMarker = null
-	// 	}
-	// };
 
 	return (
 		<LoadScript
@@ -38,20 +20,14 @@ function Maps(props) {
 		<GoogleMap
 			mapContainerStyle={containerStyle}
       center={center}
-      // zoom={10}
-			// google={props.google}
 			zoom={2}
-			// center={{
-			// 	lat: props.lat,
-			// 	lng: props.lng
-			// }}
 		>
 			<Marker
 				title={props.name}
 				name={props.location}
 				position={{
-					lat: props.lat,
-					lng: props.lng
+					lat: parseInt(props.lat),
+					lng: parseInt(props.lng)
 				}}
 			/>
 		</GoogleMap>
