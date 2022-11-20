@@ -52,7 +52,7 @@ const client = createClient({
 });
 
 export async function getStaticProps() {
-  const animals = await client.fetch(`*[_type == "animal"] | order(_createdAt, asc)`);
+  const animals = await client.fetch(`*[_type == "animal"] | order(_createdAt desc)`);
 
   return {
     props: {
