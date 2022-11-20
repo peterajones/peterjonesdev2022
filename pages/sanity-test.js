@@ -24,11 +24,11 @@ export default function IndexPage({ animals }) {
           </ul>
         )}
         {!animals.length > 0 && <p>No animals to show</p>}
-        {/* {animals.length > 0 && (
+        {animals.length > 0 && (
           <div>
             <pre>{JSON.stringify(animals, null, 2)}</pre>
           </div>
-        )} */}
+        )}
         {!animals.length > 0 && (
           <div>
             <div>¯\_(ツ)_/¯</div>
@@ -52,7 +52,7 @@ const client = createClient({
 });
 
 export async function getStaticProps() {
-  const animals = await client.fetch(`*[_type == "animal"]`);
+  const animals = await client.fetch(`*[_type == "animal"] | order(_createdAt, asc)`);
 
   return {
     props: {
