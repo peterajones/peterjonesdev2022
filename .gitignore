@@ -32,7 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-.keystone
 
 # local certs
 /certificates
