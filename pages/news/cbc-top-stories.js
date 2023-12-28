@@ -16,27 +16,33 @@ const CBCTopStories = () => {
 		setTheme(theme);
 		fetch(URL_TO_FETCH)
 			.then(response => response.text())
-			.then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
-			.then(data => {
-				const items = data.querySelectorAll('item');
+			.then(xmlData => {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
+				const items = xmlDoc.querySelectorAll('item');
+
 				setIsLoading(false);
 				let html = ``;
-				items.forEach(el => {
+
+				items.forEach(item => {
+					const title = item.querySelector('title').textContent;
+					const link = item.querySelector('link').textContent;
+					const description = item.querySelector('description').textContent;
+					const pubDate = item.querySelector('pubDate').textContent;
+					const category = item.querySelector('category').textContent;
+					const guid = item.querySelector('guid').textContent;
+
 					html += `
-              <article>
-                <h3>
-                  <a href=${el.querySelector('link').textContent}  class=${
-						styles.title
-					} target="_new">${el.querySelector('title').textContent}</a>
-                </h3>
-                <p>
-                <span class=${styles.pubData}>${
-						el.querySelector('pubDate').textContent
-					} - ${el.querySelector('author').textContent}</span>
-                ${el.querySelector('description').textContent}
-                </p>
-              </article>
-            `;
+						<article>
+							<h3>
+								<a href=${link}  class=${styles.title} target="_new">${title}</a>
+							</h3>
+							<p>
+								<span class=${styles.pubData}>${pubDate}</span>
+								${description}
+							</p>
+						</article>
+					`;
 				});
 				const articles = document.getElementsByClassName('feeds-container')[0];
 				articles.insertAdjacentHTML('beforeend', html);
