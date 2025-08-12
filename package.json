@@ -2,7 +2,7 @@
   "name": "peterjonesdev2022",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -p 4040",
     "https": "node server.js",
     "build": "next build",
     "start": "next start -p 3001",

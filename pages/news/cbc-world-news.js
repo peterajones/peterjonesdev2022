@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../styles/News.module.scss';
 
-const FEED_URL = 'https://www.cbc.ca/cmlink/rss-world';
+const FEED_URL = 'https://www.cbc.ca/webfeed/rss/rss-world';
 const CORS_PROXY = 'https://my-dev-proxy-server.herokuapp.com/';
 const URL_TO_FETCH = CORS_PROXY + FEED_URL;
 
