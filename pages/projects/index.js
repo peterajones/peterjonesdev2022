@@ -46,7 +46,7 @@ export default function Code() {
 										<span>A Weather App with a 5 day forecast.</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/weather-app.jpeg"} alt="Weather App" />
+										<Image src={"/images/code/weather-app.jpeg"} alt="Weather App" width={400} height={225} />
 									</div>
 								</div>
 							</Link>
@@ -73,6 +73,8 @@ export default function Code() {
 										<Image
 											src={"/images/code/password-generator.jpeg"}
 											alt="Random Password Generator"
+											width={400}
+											height={225}
 										/>
 									</div>
 								</div>
@@ -96,7 +98,7 @@ export default function Code() {
 										<span>Lots going on in this one!</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/pagination.jpg"} alt="Pagination" />
+										<Image src={"/images/code/pagination.jpg"} alt="Pagination" width={400} height={225} />
 									</div>
 								</div>
 							</Link>
@@ -123,7 +125,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/checkbox-styling.jpg"} alt="Checkbox Styling" />
+										<Image src={"/images/code/checkbox-styling.jpg"} alt="Checkbox Styling" width={400} height={225} />
 									</div>
 								</div>
 							</Link>
@@ -148,7 +150,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/pizza-pie.jpg"} alt="Pizza Pie" />
+										<Image src={"/images/code/pizza-pie.jpg"} alt="Pizza Pie" width={400} height={225} />
 									</div>
 								</div>
 							</Link>
@@ -175,7 +177,7 @@ export default function Code() {
 										</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/rollup-counter.jpg"} alt="Rollup Counter" />
+										<Image src={"/images/code/rollup-counter.jpg"} alt="Rollup Counter" width={400} height={225} />
 									</div>
 								</div>
 							</Link>
@@ -198,7 +200,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/react-clock-code.jpg"} alt="Template" />
+										<Image src={"/images/code/react-clock-code.jpg"} alt="Template" width={400} height={225} />
 									</div>
 								</div>
 							</Link>
