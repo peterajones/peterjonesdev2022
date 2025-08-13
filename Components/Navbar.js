@@ -107,7 +107,7 @@ export default function Navbar() {
 								<FontAwesomeIcon icon={faMoon} />
 							)}
 						</button>
-	          {!session ? (
+	          {/* {!session ? (
 	            <button
 							name='toggle session'
 							title='Session SignIn'
@@ -135,7 +135,7 @@ export default function Navbar() {
 								<FontAwesomeIcon icon={faUnlock} />
 							)}
 						</button>
-	          )}
+	          )} */}
 						<button
 							name="toggle updates modal"
 							title="Latest Updates"
