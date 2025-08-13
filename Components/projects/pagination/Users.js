@@ -18,6 +18,7 @@ const Users = ({ users, loading }) => {
 					width='50'
 					height='50'
 					className='spinner'
+					loader={({src}) => src}
 				/>
 			</>
 		);

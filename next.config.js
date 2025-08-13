@@ -3,5 +3,6 @@ module.exports = {
   trailingSlash: true,
   images: {
     domains: ['avatars.githubusercontent.com','gitlab.com'],
+    loader: 'custom',
   },
 }

@@ -76,6 +76,7 @@ const CNBCEuroNews = () => {
 						width='100'
 						height='100'
 						layout='fixed'
+						loader={({src}) => src}
 					/>{' '}
 					<h2>CNBC Euro News</h2>
 				</div>
@@ -87,6 +88,7 @@ const CNBCEuroNews = () => {
 							width='64'
 							height='64'
 							unoptimized={true}
+							loader={({src}) => src}
 						/>
 						<p>Proxy server is warming up...</p>
 					</>
@@ -98,6 +100,7 @@ const CNBCEuroNews = () => {
 							width='64'
 							height='64'
 							unoptimized={true}
+							loader={({src}) => src}
 						/>
 						<p>Proxy server is warming up...</p>
 					</>

@@ -35,9 +35,9 @@ export default function Code() {
 							<Link href='/projects/weather-app' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title">
 										<span>Weather App</span>
@@ -46,7 +46,7 @@ export default function Code() {
 										<span>A Weather App with a 5 day forecast.</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/weather-app.jpeg"} alt="Weather App" width={400} height={225} />
+										<Image src={"/images/code/weather-app.jpeg"} alt="Weather App" width={400} height={225} loader={({src}) => src} />
 									</div>
 								</div>
 							</Link>
@@ -55,8 +55,8 @@ export default function Code() {
 							<Link href='/projects/random-password-generator' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-REACT.png"} alt="React"  className='tech-badge' width={48} height={16}/>
-										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-REACT.png"} alt="React"  className='tech-badge' width={48} height={16} loader={({src}) => src}/>
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title">
 										<span>Random Password Generator</span>
@@ -75,6 +75,7 @@ export default function Code() {
 											alt="Random Password Generator"
 											width={400}
 											height={225}
+											loader={({src}) => src}
 										/>
 									</div>
 								</div>
@@ -84,8 +85,8 @@ export default function Code() {
 							<Link href='/projects/"/images/code/pagination.jpg"' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-REACT.png"} alt="React" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-REACT.png"} alt="React" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title">
 										<span>Pagination</span>
@@ -98,7 +99,7 @@ export default function Code() {
 										<span>Lots going on in this one!</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/pagination.jpg"} alt="Pagination" width={400} height={225} />
+										<Image src={"/images/code/pagination.jpg"} alt="Pagination" width={400} height={225} loader={({src}) => src} />
 									</div>
 								</div>
 							</Link>
@@ -107,8 +108,8 @@ export default function Code() {
 							<Link href='/projects/checkbox-styling' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title">
 										<span>CSS - Checkbox Styling</span>
@@ -125,7 +126,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/checkbox-styling.jpg"} alt="Checkbox Styling" width={400} height={225} />
+										<Image src={"/images/code/checkbox-styling.jpg"} alt="Checkbox Styling" width={400} height={225} loader={({src}) => src} />
 									</div>
 								</div>
 							</Link>
@@ -134,9 +135,9 @@ export default function Code() {
 							<Link href='/projects/pizza-pie' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title">
 										<span>Pizza Pie</span>
@@ -150,7 +151,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/pizza-pie.jpg"} alt="Pizza Pie" width={400} height={225} />
+										<Image src={"/images/code/pizza-pie.jpg"} alt="Pizza Pie" width={400} height={225} loader={({src}) => src} />
 									</div>
 								</div>
 							</Link>
@@ -159,8 +160,8 @@ export default function Code() {
 							<Link href='/projects/rollup-counter' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
-										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title truncate">
 										<span>Javascript Rollup Counter</span>
@@ -177,7 +178,7 @@ export default function Code() {
 										</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/rollup-counter.jpg"} alt="Rollup Counter" width={400} height={225} />
+										<Image src={"/images/code/rollup-counter.jpg"} alt="Rollup Counter" width={400} height={225} loader={({src}) => src} />
 									</div>
 								</div>
 							</Link>
@@ -186,7 +187,7 @@ export default function Code() {
 							<Link href='/projects/js-clock' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} loader={({src}) => src} />
 									</div>
 									<div className="card-title">
 										<span>React Twelve Hour Clock</span>
@@ -200,7 +201,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={"/images/code/react-clock-code.jpg"} alt="Template" width={400} height={225} />
+										<Image src={"/images/code/react-clock-code.jpg"} alt="Template" width={400} height={225} loader={({src}) => src} />
 									</div>
 								</div>
 							</Link>

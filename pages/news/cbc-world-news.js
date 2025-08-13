@@ -65,6 +65,7 @@ const CBCWorldNews = () => {
 						alt='cbc news'
 						width='100'
 						height='100'
+						loader={({src}) => src}
 					/>{' '}
 					<h2>CBC - World News</h2>
 				</div>
@@ -76,6 +77,7 @@ const CBCWorldNews = () => {
 							width='64'
 							height='64'
 							unoptimized={true}
+							loader={({src}) => src}
 						/>
 						<p>Proxy server is warming up...</p>
 					</>
@@ -87,6 +89,7 @@ const CBCWorldNews = () => {
 							width='64'
 							height='64'
 							unoptimized={true}
+							loader={({src}) => src}
 						/>
 						<p>Proxy server is warming up...</p>
 					</>
