@@ -3,17 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Banner from '../../Components/Banner'
-import badgeHTML from "../../public/images/code/badge-HTML.png";
-import badgeCSS from "../../public/images/code/badge-CSS.png";
-import badgeJS from "../../public/images/code/badge-JS.png";
-import badgeREACT from "../../public/images/code/badge-REACT.png";
-import reactClockCode from "../../public/images/code/react-clock-code.jpg";
-import rollupCounter from "../../public/images/code/rollup-counter.jpg";
-import pizzaPie from "../../public/images/code/pizza-pie.jpg";
-import checkboxStyling from "../../public/images/code/checkbox-styling.jpg";
-import pagination from "../../public/images/code/pagination.jpg";
-import passwordGenerator from "../../public/images/code/password-generator.jpeg";
-import weatherApp from "../../public/images/code/weather-app.jpeg";
+// Static image paths - no imports needed for public assets
 
 export default function Code() {
 	const [didMount, setDidMount] = useState(false);
@@ -45,9 +35,9 @@ export default function Code() {
 							<Link href='/projects/weather-app' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeHTML} alt="HTML" className='tech-badge' width={48} height={16} />
-										<Image src={badgeCSS} alt="CSS" className='tech-badge' width={48} height={16} />
-										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title">
 										<span>Weather App</span>
@@ -56,7 +46,7 @@ export default function Code() {
 										<span>A Weather App with a 5 day forecast.</span>
 									</div>
 									<div className="card-image">
-										<Image src={weatherApp} alt="Weather App" />
+										<Image src={"/images/code/weather-app.jpeg"} alt="Weather App" />
 									</div>
 								</div>
 							</Link>
@@ -65,8 +55,8 @@ export default function Code() {
 							<Link href='/projects/random-password-generator' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeREACT} alt="React"  className='tech-badge' width={48} height={16}/>
-										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-REACT.png"} alt="React"  className='tech-badge' width={48} height={16}/>
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title">
 										<span>Random Password Generator</span>
@@ -81,7 +71,7 @@ export default function Code() {
 									</div>
 									<div className="card-image">
 										<Image
-											src={passwordGenerator}
+											src={"/images/code/password-generator.jpeg"}
 											alt="Random Password Generator"
 										/>
 									</div>
@@ -89,11 +79,11 @@ export default function Code() {
 							</Link>
 						</li>
 						<li className='item'>
-							<Link href='/projects/pagination' passHref>
+							<Link href='/projects/"/images/code/pagination.jpg"' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeREACT} alt="React" className='tech-badge' width={48} height={16} />
-										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-REACT.png"} alt="React" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title">
 										<span>Pagination</span>
@@ -106,7 +96,7 @@ export default function Code() {
 										<span>Lots going on in this one!</span>
 									</div>
 									<div className="card-image">
-										<Image src={pagination} alt="Pagination" />
+										<Image src={"/images/code/pagination.jpg"} alt="Pagination" />
 									</div>
 								</div>
 							</Link>
@@ -115,8 +105,8 @@ export default function Code() {
 							<Link href='/projects/checkbox-styling' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeHTML} alt="HTML" className='tech-badge' width={48} height={16} />
-										<Image src={badgeCSS} alt="CSS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title">
 										<span>CSS - Checkbox Styling</span>
@@ -133,7 +123,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={checkboxStyling} alt="Checkbox Styling" />
+										<Image src={"/images/code/checkbox-styling.jpg"} alt="Checkbox Styling" />
 									</div>
 								</div>
 							</Link>
@@ -142,9 +132,9 @@ export default function Code() {
 							<Link href='/projects/pizza-pie' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeHTML} alt="HTML" className='tech-badge' width={48} height={16} />
-										<Image src={badgeCSS} alt="CSS" className='tech-badge' width={48} height={16} />
-										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-HTML.png"} alt="HTML" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title">
 										<span>Pizza Pie</span>
@@ -158,7 +148,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={pizzaPie} alt="Pizza Pie" />
+										<Image src={"/images/code/pizza-pie.jpg"} alt="Pizza Pie" />
 									</div>
 								</div>
 							</Link>
@@ -167,8 +157,8 @@ export default function Code() {
 							<Link href='/projects/rollup-counter' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeCSS} alt="CSS" className='tech-badge' width={48} height={16} />
-										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-CSS.png"} alt="CSS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title truncate">
 										<span>Javascript Rollup Counter</span>
@@ -185,7 +175,7 @@ export default function Code() {
 										</span>
 									</div>
 									<div className="card-image">
-										<Image src={rollupCounter} alt="Rollup Counter" />
+										<Image src={"/images/code/rollup-counter.jpg"} alt="Rollup Counter" />
 									</div>
 								</div>
 							</Link>
@@ -194,7 +184,7 @@ export default function Code() {
 							<Link href='/projects/js-clock' passHref>
 								<div className="card">
 									<div className="card-badges">
-										<Image src={badgeJS} alt="JS" className='tech-badge' width={48} height={16} />
+										<Image src={"/images/code/badge-JS.png"} alt="JS" className='tech-badge' width={48} height={16} />
 									</div>
 									<div className="card-title">
 										<span>React Twelve Hour Clock</span>
@@ -208,7 +198,7 @@ export default function Code() {
 										<span>Click on this tile to see more...</span>
 									</div>
 									<div className="card-image">
-										<Image src={reactClockCode} alt="Template" />
+										<Image src={"/images/code/react-clock-code.jpg"} alt="Template" />
 									</div>
 								</div>
 							</Link>
