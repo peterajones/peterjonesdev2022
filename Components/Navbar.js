@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link';
-import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSun, faMoon, faBell, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
@@ -53,7 +52,7 @@ export default function Navbar() {
 						{theme === 'light' ? (
 							<Link href='/'>
 								<a>
-									<Image
+									<img
 										src='/images/my-logo.png'
 										alt='logo'
 										width={224}
@@ -64,7 +63,7 @@ export default function Navbar() {
 						) : (
 							<Link href='/'>
 								<a>
-									<Image
+									<img
 										src='/images/my-logo-dark.png'
 										alt='logo'
 										width={224}
